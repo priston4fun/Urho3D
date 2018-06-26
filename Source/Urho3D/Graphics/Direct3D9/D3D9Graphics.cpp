@@ -2079,11 +2079,17 @@ void Graphics::OnWindowResized()
     if (newWidth == width_ && newHeight == height_)
         return;
 
-    width_ = newWidth;
-    height_ = newHeight;
+    /* Depracated Function
+	 * Codigo retirado para suportar o nao uso do auto ajuste
+	
+	 width_ = newWidth;
+     height_ = newHeight;
 
-    impl_->presentParams_.BackBufferWidth = (UINT)width_;
-    impl_->presentParams_.BackBufferHeight = (UINT)height_;
+     impl_->presentParams_.BackBufferWidth = (UINT)width_;
+     impl_->presentParams_.BackBufferHeight = (UINT)height_;
+	 
+	 */
+
     ResetDevice();
 
     // Reset rendertargets and viewport for the new screen size
