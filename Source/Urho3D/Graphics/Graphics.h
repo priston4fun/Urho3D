@@ -527,6 +527,8 @@ public:
     void SetVBO(unsigned object);
     /// Bind a UBO, avoiding redundant operation. Used only on OpenGL.
     void SetUBO(unsigned object);
+	/// Reset the Direct3D9 device.
+	void ResetDevice();
 
     /// Return the API-specific alpha texture format.
     static unsigned GetAlphaFormat();
@@ -586,8 +588,6 @@ private:
     bool CreateInterface();
     /// Create the Direct3D9 device.
     bool CreateDevice(unsigned adapter, unsigned deviceType);
-    /// Reset the Direct3D9 device.
-    void ResetDevice();
     /// Notify all GPU resources so they can release themselves as needed. Used only on Direct3D9.
     void OnDeviceLost();
     /// Notify all GPU resources so they can recreate themselves as needed. Used only on Direct3D9.
