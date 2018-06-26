@@ -353,6 +353,13 @@ bool Graphics::SetMode(int width, int height, bool fullscreen, bool borderless, 
 
     if (!window_)
     {
+		// Caso esteja usando resolucao que esteja colidindo com a resolucao maxima suportada pelo monitor
+		if( width >= mode.w && height >= mode.h )
+		{
+			width = mode.w;
+			height = mode.h - 1;
+		}
+
         if (!OpenWindow(width, height, resizable, borderless))
             return false;
     }
