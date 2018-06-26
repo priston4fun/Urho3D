@@ -2385,9 +2385,10 @@ bool Graphics::CreateInterface()
         return false;
     }
 
-    if (impl_->deviceCaps_.PixelShaderVersion < D3DPS_VERSION(3, 0))
+	// Suporte minimo de Pixel Shader 2.0, lembrando que recursos que utilizam do PS 3.0 nao irao funcionar corretamente
+    if (impl_->deviceCaps_.PixelShaderVersion < D3DPS_VERSION(2, 0))
     {
-        URHO3D_LOGERROR("Shader model 3.0 display adapter is required");
+        URHO3D_LOGERROR("Shader model 2.0 display adapter is required");
         return false;
     }
 
