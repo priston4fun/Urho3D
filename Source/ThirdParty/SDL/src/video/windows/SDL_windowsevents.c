@@ -1000,6 +1000,10 @@ WIN_WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
     }
 
+	/* Call custom window procedure */
+	if( GetProp( hwnd, TEXT( "Custom_WndProc" ) ) )
+		CallWindowProc( (WNDPROC)GetProp( hwnd, TEXT( "Custom_WndProc" ) ), hwnd, msg, wParam, lParam );
+
     /* If there's a window proc, assume it's going to handle messages */
     if (data->wndproc) {
         return CallWindowProc(data->wndproc, hwnd, msg, wParam, lParam);

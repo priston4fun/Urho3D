@@ -47,6 +47,9 @@ public:
     /// Construct.
     GraphicsImpl();
 
+	/// Return Direct3D interface.
+	IDirect3D9* GetInterface() const { return interface_; }
+
     /// Return Direct3D device.
     IDirect3DDevice9* GetDevice() const { return device_; }
 

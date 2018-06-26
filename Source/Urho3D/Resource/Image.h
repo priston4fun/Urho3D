@@ -25,6 +25,8 @@
 #include "../Container/ArrayPtr.h"
 #include "../Resource/Resource.h"
 
+#undef GetNextSibling
+
 struct SDL_Surface;
 
 namespace Urho3D

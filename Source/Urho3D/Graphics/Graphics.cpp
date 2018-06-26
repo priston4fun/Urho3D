@@ -55,6 +55,7 @@
 #include "../IO/Log.h"
 
 #include <SDL/SDL.h>
+#include <SDL/SDL_syswm.h>
 
 #include "../DebugNew.h"
 
@@ -164,6 +165,15 @@ void Graphics::SetShaderParameter(StringHash param, const Variant& value)
         // Unsupported parameter type, do nothing
         break;
     }
+}
+
+void * Graphics::GetMainWindowHandle() const
+{
+	SDL_SysWMinfo sysInfo;
+
+	SDL_VERSION( &sysInfo.version );
+	SDL_GetWindowWMInfo( window_, &sysInfo );
+	return sysInfo.info.win.window;
 }
 
 IntVector2 Graphics::GetWindowPosition() const

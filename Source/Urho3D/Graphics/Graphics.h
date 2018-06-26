@@ -258,6 +258,9 @@ public:
     /// Return graphics implementation, which holds the actual API-specific resources.
     GraphicsImpl* GetImpl() const { return impl_; }
 
+	/// Return window handle.
+	void * GetMainWindowHandle() const;
+
     /// Return OS-specific external window handle. Null if not in use.
     void* GetExternalWindow() const { return externalWindow_; }
 
