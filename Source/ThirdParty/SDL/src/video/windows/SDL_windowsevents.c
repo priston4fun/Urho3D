@@ -1100,7 +1100,7 @@ SDL_RegisterApp(char *name, Uint32 style, void *hInst)
     wcex.hIconSm        = NULL;
     wcex.lpszMenuName   = NULL;
     wcex.lpszClassName  = SDL_Appname;
-    wcex.style          = SDL_Appstyle;
+    wcex.style          = SDL_Appstyle | CS_DBLCLKS;
     wcex.hbrBackground  = NULL;
     wcex.lpfnWndProc    = WIN_WindowProc;
     wcex.hInstance      = SDL_Instance;
